@@ -31,11 +31,6 @@ class MainApp extends StatelessWidget {
         '/delet' : (_) => DeletPage(),
       },
       debugShowCheckedModeBanner: false,
-      //initialRoute: '/Loginpage',
-      //routes: {
-        //'/Loginpage' :(context) => Loginpage(),
-        //'/ResumoGastosPage' :(context) => ResumoGastosPage(),
-      //},
     );
   }
 }

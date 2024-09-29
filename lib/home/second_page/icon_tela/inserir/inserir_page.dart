@@ -61,7 +61,21 @@ class InserirPage extends StatelessWidget {
                   icon: Icon(Icons.calendar_month),
                 ),
               ),
-            )
+            ),
+            const SizedBox(height: 32),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/resumo');
+              },
+              style: ElevatedButton.styleFrom(
+                minimumSize: const Size(double.infinity, 50),
+                side: const BorderSide(color: Colors.grey),
+              ),
+              child: Text(
+                'Confirmar',
+                style: TextStyle(color: Colors.blue[900]),
+              ),
+            ),
           ],
         ),
       ),
