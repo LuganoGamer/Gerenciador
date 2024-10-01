@@ -1,4 +1,7 @@
+import 'package:date_format/date_format.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/shared/account_type.dart';
+import 'package:flutter_application_1/shared/calendar.dart';
 
 class DeletPage extends StatelessWidget {
   DeletPage({super.key});
@@ -7,12 +10,8 @@ class DeletPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Deletar'),
-        centerTitle: true,
-      ),
-      body: Padding(
+    return Container(
+      child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

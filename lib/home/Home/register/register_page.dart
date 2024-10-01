@@ -57,14 +57,16 @@ final _repetpasswordController = TextEditingController();
             TextFormField(
               controller: _repetpasswordController,
               decoration: const InputDecoration(
-                labelText: 'Repe a Senha',
+                labelText: 'Repetir a Senha',
                 border: OutlineInputBorder(),
               ),
               obscureText: true,
             ),
             const SizedBox(height: 32),
             OutlinedButton(
-              onPressed: (){},
+              onPressed: (){
+                Navigator.pushNamed(context, '/resumo');
+              },
               style: OutlinedButton.styleFrom(
                 minimumSize: const Size(double.infinity, 50),
                 side: BorderSide(color: Colors.grey),

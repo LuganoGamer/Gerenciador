@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/home/second_page/resumo_page/resumo_page.dart';
 import 'package:flutter_application_1/home/second_page/icon_tela/delet/delet_page.dart';
 import 'package:flutter_application_1/home/second_page/icon_tela/edit/edit_page.dart';
 import 'package:flutter_application_1/home/second_page/icon_tela/inserir/inserir_page.dart';
@@ -15,7 +16,8 @@ class _ResumoGastosPageState extends State<ResumoGastosPage> {
 
   @override
   Widget build(BuildContext context) {
-    var indexedStack = [
+    final indexedStack = [
+        ResumoPage(),
         InserirPage(),
         EditPage(),
         DeletPage(),
@@ -34,6 +36,14 @@ class _ResumoGastosPageState extends State<ResumoGastosPage> {
             });
           },
           items: const [
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.home,
+                size: 30,
+                color: Colors.black,
+              ),
+              label: 'Meus gastos',
+            ),
             BottomNavigationBarItem(
               icon: Icon(
                 Icons.edit,

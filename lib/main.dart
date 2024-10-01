@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/home/Home/LoginPage.dart';
 import 'package:flutter_application_1/home/Home/register/register_page.dart';
+import 'package:flutter_application_1/home/second_page/resumo_page/resumo_page.dart';
 import 'package:flutter_application_1/home/second_page/home_2/resumo_gastos_page.dart';
 import 'package:flutter_application_1/home/second_page/icon_tela/delet/delet_page.dart';
 import 'package:flutter_application_1/home/second_page/icon_tela/edit/edit_page.dart';
