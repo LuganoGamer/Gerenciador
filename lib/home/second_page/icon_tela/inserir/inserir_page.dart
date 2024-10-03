@@ -1,6 +1,8 @@
 import 'package:date_format/date_format.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/home/second_page/resumo_page/resumo_page.dart';
+import 'package:flutter_application_1/model/valor_model.dart';
+import 'package:flutter_application_1/repository/db_helper.dart';
 import 'package:flutter_application_1/shared/account_type.dart';
 import 'package:flutter_application_1/shared/calendar.dart';
 
@@ -9,6 +11,7 @@ class InserirPage extends StatelessWidget {
 
   var _dateController = TextEditingController();
   var _valorController = TextEditingController();
+  var _database = DbHelper();
 
   @override
   Widget build(BuildContext context) {
@@ -64,15 +67,10 @@ class InserirPage extends StatelessWidget {
             ),
             const SizedBox(height: 32),
             ElevatedButton(
-              onPressed: () {
-                double valor = double.parse(_valorController.text);
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ResumoPage(valor: valor),
-                  )
-                );
-                Navigator.pushNamed(context, '/resumo');
+              onPressed: () async {
+                double valor = double.tryParse(_valorController.text) ?? 0.0;
+                await _database.inserirValor(ValorModel(valor: valor));
+                //Navigator.pushNamed(context, '/resumo');
               },
               style: ElevatedButton.styleFrom(
                 minimumSize: const Size(double.infinity, 50),

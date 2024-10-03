@@ -14,15 +14,6 @@ class Loginpage extends StatelessWidget {
     _passwordController.clear();
   }
 
-  //void _submit(BuildContext context) {
-   // if (_formKey.currentState?.validate() ?? false) {
-    //  Navigator.push(
-      //  context,
-//MaterialPageRoute(builder: (context) => const ResumoGastosPage()),
-   //   );
-   // }
- // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

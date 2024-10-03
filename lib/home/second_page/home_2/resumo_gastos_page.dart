@@ -46,19 +46,19 @@ class _ResumoGastosPageState extends State<ResumoGastosPage> {
             ),
             BottomNavigationBarItem(
               icon: Icon(
-                Icons.edit,
-                size: 30,
-                color: Colors.black,
-              ),
-              label: 'Editar Valor',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
                 Icons.file_download_outlined,
                 size: 30,
                 color: Colors.black,
               ),
               label: 'Inserir Valor',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.edit,
+                size: 30,
+                color: Colors.black,
+              ),
+              label: 'Editar Valor',
             ),
             BottomNavigationBarItem(
               icon: Icon(
