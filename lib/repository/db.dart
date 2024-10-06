@@ -8,17 +8,17 @@ class Db {
   CREATE TABLE $_tableName(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name VARCHAR(50) NOT NULL,
-    lastName VARCHAR(50) NOT NULL,
+    lastName VARCHAR(50) NOT NULL
   );
 ''';
 
   static Future<Database> getInstancia() async {
-    final path = '${getDatabasesPath()} $_dbName';
+    final path = '${await getDatabasesPath()} $_dbName';
     return await openDatabase(
       path,
       version: _dbVersion,
       onCreate: (db, version) {
-        db.execute(_sql);
+        return db.execute(_sql);
       },
     );
   }

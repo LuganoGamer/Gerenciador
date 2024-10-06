@@ -17,7 +17,7 @@ class ResumoPage extends StatelessWidget {
         child: Padding(
             padding: const EdgeInsets.all(16.0),
             child:
-                Column(mainAxisAlignment: MainAxisAlignment.center, children: [              
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
               const SizedBox(height: 24),
               Text(
                 'Gastos até o momento: R\$ $valor',

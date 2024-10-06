@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class RegisterPage extends StatelessWidget {
-   RegisterPage({super.key});
+  RegisterPage({super.key});
 
 final _userController = TextEditingController();
 final _passwordController = TextEditingController();
@@ -63,8 +63,25 @@ final _repetpasswordController = TextEditingController();
               obscureText: true,
             ),
             const SizedBox(height: 32),
+
+/*
+              ElevatedButton(
+                onPressed: () async{
+                  bool sucesso = await registrarUsuario(nome, senha);
+                  if(sucesso) {
+                    Navigator.pushReplacement(context, '/resumo');
+                  }
+                  else {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text("Erro ao registrar. Tente Novamente.")),
+                    );
+                  }
+                }
+              )
+*/
+
             OutlinedButton(
-              onPressed: (){
+              onPressed: () {
                 Navigator.pushNamed(context, '/resumo');
               },
               style: OutlinedButton.styleFrom(
@@ -85,7 +102,7 @@ final _repetpasswordController = TextEditingController();
               style: OutlinedButton.styleFrom(
                 minimumSize: const Size(double.infinity, 50),
                 side: BorderSide(color: Colors.grey),
-              ), 
+              ),
               child: Text(
                 'Cancelar',
                 style: TextStyle(color: Colors.blue[900]),

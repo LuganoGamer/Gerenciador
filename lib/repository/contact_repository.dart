@@ -25,6 +25,7 @@ class ContactRepository {
         .update(_tableName, map, where: 'id=?', whereArgs: [map['id']]);
   }
 
+//testar
   Future<int> delete(int id) async {
     final db = await Db.getInstancia();
     return await db.delete(

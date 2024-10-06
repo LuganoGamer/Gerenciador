@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/home/second_page/home_2/resumo_gastos_page.dart';
 
 class Loginpage extends StatelessWidget {
   Loginpage({super.key});
@@ -72,7 +71,7 @@ class Loginpage extends StatelessWidget {
               ),
               child: Text(
                 'Cancelar',
-                 style: TextStyle(color: Colors.blue[900]),
+                style: TextStyle(color: Colors.blue[900]),
               ),
             ),
 

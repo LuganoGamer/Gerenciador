@@ -1,8 +1,9 @@
 class ValorModel {
-int? id;
-double valor;
+  final int? id;
+  final double valor;
 
   ValorModel({this.id, required this.valor});
+  
   Map<String, dynamic> toMap(){
     return {
       'id': id,
@@ -15,5 +16,5 @@ double valor;
       id: map['id'],
       valor: map['valor'],
     );
-  } 
+  }
 }

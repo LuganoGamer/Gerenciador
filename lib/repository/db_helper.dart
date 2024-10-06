@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_application_1/model/valor_model.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
@@ -21,20 +20,33 @@ class DbHelper {
     return await openDatabase(
       path,
       version: 1,
-      onCreate: (db, version) {
-        '''
-      CREATE TABLE valores(
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      valor REAL
-      )
-      ''';
+      onCreate: (db, version) async {
+        await db.execute('''
+          CREATE TABLE valores(
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            valor REAL
+          )
+      ''');
       },
     );
   }
 
-  Future<int> inserirValor(ValorModel valor) async {
+  /*Future<int> inserirValor(ValorModel valor) async {
     Database db = await database;
     return await db.insert('valores', valor.toMap());
+  }*/
+
+  //testar
+
+  Future<int> inserirValor(ValorModel valor) async {
+    try{
+      Database db = await database;
+      return await db.insert('valores', valor.toMap());
+    }
+    catch (e) {
+      print("Erro ao inserir valor: $e");
+      return -1;
+    }
   }
 
   Future<List<ValorModel>> getValores() async {
@@ -48,5 +60,13 @@ class DbHelper {
   Future<void> deleteAll() async {
     Database db = await database;
     await db.delete('valores');
+  }
+
+//testar
+
+  Future<void> registrarValor(double valor) async {
+    ValorModel novoValor = ValorModel(valor: valor);
+    int id = await DbHelper().inserirValor(novoValor);
+    print("Valor registrado com ID: $id");
   }
 }
