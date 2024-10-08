@@ -48,7 +48,7 @@ class Loginpage extends StatelessWidget {
             const SizedBox(height: 32),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/resumo');
+                //Navigator.pushNamed(context, '/resumo');
               },
               style: ElevatedButton.styleFrom(
                 minimumSize: const Size(double.infinity, 50),
@@ -78,7 +78,7 @@ class Loginpage extends StatelessWidget {
             const SizedBox(height: 16),
             TextButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/register');
+                //Navigator.pushNamed(context, '/register');
               },
               child: Text(
                 'Registra-se',

@@ -6,9 +6,16 @@ import 'package:flutter_application_1/home/second_page/home_2/resumo_gastos_page
 import 'package:flutter_application_1/home/second_page/icon_tela/delet/delet_page.dart';
 import 'package:flutter_application_1/home/second_page/icon_tela/edit/edit_page.dart';
 import 'package:flutter_application_1/home/second_page/icon_tela/inserir/inserir_page.dart';
+import 'package:flutter_application_1/model/ValorModel.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(
+    ChangeNotifierProvider<ValorModel>(
+      create: (context) => ValorModel(0),
+      child: MainApp(),
+    ),
+  );
 }
 
 class MainApp extends StatelessWidget {

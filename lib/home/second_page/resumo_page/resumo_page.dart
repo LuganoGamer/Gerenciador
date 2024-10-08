@@ -1,8 +1,9 @@
 import 'package:date_format/date_format.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/model/valor_model.dart';
 import 'package:flutter_application_1/repository/db_helper.dart';
 import 'package:flutter_application_1/shared/calendar.dart';
+import 'package:flutter_application_1/model/ValorModel.dart';
+import 'package:provider/provider.dart';
 
 class ResumoPage extends StatelessWidget {
   ResumoPage({super.key, this.valor = 0});
@@ -35,7 +36,18 @@ class ResumoPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Resumo'),
       ),
-      body: FutureBuilder<List<ValorModel>>(
+
+      body: Center(
+        child: Consumer<ValorModel>(
+          builder: (context, valorModel, child) {
+            return Text(
+              'Valor: ${valorModel.valor.toStringAsFixed(2)}',
+              style: TextStyle(fontSize:24),
+            );
+          },
+        ),
+      ),
+      /*body: FutureBuilder<List<ValorModel>>(
         future: _database.getValores(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
@@ -60,7 +72,7 @@ class ResumoPage extends StatelessWidget {
             }
           );
         }
-      )
+      )*/
     );
   }
 }

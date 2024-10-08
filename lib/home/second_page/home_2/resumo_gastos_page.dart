@@ -27,6 +27,9 @@ class _ResumoGastosPageState extends State<ResumoGastosPage> {
         title: const Text('Resumo de Gastos'),
         centerTitle: true,
       ),
+
+
+      
       bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           currentIndex: _opcaoSelecionada,

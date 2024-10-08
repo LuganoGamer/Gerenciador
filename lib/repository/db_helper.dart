@@ -1,4 +1,4 @@
-import 'package:flutter_application_1/model/valor_model.dart';
+import 'package:flutter_application_1/model/ValorModel.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
@@ -65,7 +65,7 @@ class DbHelper {
 //testar
 
   Future<void> registrarValor(double valor) async {
-    ValorModel novoValor = ValorModel(valor: valor);
+    ValorModel novoValor = ValorModel(valor);
     int id = await DbHelper().inserirValor(novoValor);
     print("Valor registrado com ID: $id");
   }

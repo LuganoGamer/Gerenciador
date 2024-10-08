@@ -1,10 +1,11 @@
 import 'package:date_format/date_format.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/home/second_page/resumo_page/resumo_page.dart';
-import 'package:flutter_application_1/model/valor_model.dart';
 import 'package:flutter_application_1/repository/db_helper.dart';
 import 'package:flutter_application_1/shared/account_type.dart';
 import 'package:flutter_application_1/shared/calendar.dart';
+import 'package:flutter_application_1/model/ValorModel.dart';
+import 'package:provider/provider.dart';
 
 class InserirPage extends StatelessWidget {
   InserirPage({super.key});
@@ -12,6 +13,8 @@ class InserirPage extends StatelessWidget {
   var _dateController = TextEditingController();
   var _valorController = TextEditingController();
   var _database = DbHelper();
+
+  final TextEditingController _controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +38,9 @@ class InserirPage extends StatelessWidget {
                 border: OutlineInputBorder(),
                 
               ),
-              controller: _valorController,
+              //controller: _valorController,
+              keyboardType: TextInputType.number,
+              controller: _controller,
             ),
             const SizedBox(height: 16),
             DropdownMenu<String>(
@@ -68,8 +73,10 @@ class InserirPage extends StatelessWidget {
             const SizedBox(height: 32),
             ElevatedButton(
               onPressed: () async {
-                double valor = double.tryParse(_valorController.text) ?? 0.0;
-                await _database.inserirValor(ValorModel(valor: valor));
+                double valorInserido = double.tryParse(_controller.text) ?? 0.0;
+                Provider.of<ValorModel>(context, listen: false).setValor(valorInserido);
+                //double valor = double.tryParse(_valorController.text) ?? 0.0;
+                //await _database.inserirValor(ValorModel(valor: valor));
                 //Navigator.pushNamed(context, '/resumo');
               },
               style: ElevatedButton.styleFrom(
